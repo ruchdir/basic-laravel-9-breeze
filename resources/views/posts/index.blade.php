@@ -26,7 +26,7 @@
                                 <tr class="bg-white border-b">
                                     <td scope="col" class="px-6 py-3">{{ $post->title }}</td>
                                     <td scope="col" class="px-6 py-3">{{ $post->post_text }}</td>
-                                    <td scope="col" class="px-6 py-3">{{ $post->category }}</td>
+                                    <td scope="col" class="px-6 py-3">{{ $post->category->name }}</td>
                                     <td scope="col" class="px-6 py-3">
                                         <a href="{{ route('posts.edit', $post) }}">Edit</a>
                                         <form method="POST" action="{{ route('posts.destroy', $post) }}">
