@@ -23,7 +23,14 @@
                             @foreach($categories as $category)
                                 <tr class="bg-white border-b">
                                     <td scope="col" class="px-6 py-3">{{ $category->name }}</td>
-                                    <td scope="col" class="px-6 py-3"><a href="{{ route('categories.edit', $category) }}">Edit</a></td>
+                                    <td scope="col" class="px-6 py-3">
+                                        <a href="{{ route('categories.edit', $category) }}">Edit</a>
+                                        <form method="POST" action="{{ route('categories.destroy', $category) }}">
+                                            @csrf
+                                            @method("DELETE")
+                                            <button type="submit" onclick="return confirm('Are you sure?')">Delete</button>
+                                        </form>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
