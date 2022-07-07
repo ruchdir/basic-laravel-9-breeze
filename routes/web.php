@@ -23,7 +23,7 @@ Route::group(['middleware'=> ['auth']], function(){
         return view('dashboard');
     })->name('dashboard');
     
-    Route::resource('categories', CategoryController::class);
+    Route::resource('categories', CategoryController::class)->middleware('is_admin');
 });
 
 
